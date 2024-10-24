@@ -1,0 +1,61 @@
+{
+  "name": "@safe-global/safe-singleton-factory",
+  "version": "1.0.35",
+  "description": "Singleton factory used by Safe related contracts",
+  "homepage": "https://github.com/safe-global/safe-singleton-factory/",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/",
+    "artifacts/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "compile": "ts-node scripts/compile.ts",
+    "compile:zk": "hardhat compile && hardhat deploy-zksync --script compile-zk.ts",
+    "verify": "ts-node scripts/verify.ts",
+    "status": "ts-node scripts/status.ts",
+    "submit": "ts-node scripts/submit.ts",
+    "estimate": "ts-node scripts/estimate.ts",
+    "estimate-compile": "ts-node scripts/estimate-compile.ts",
+    "build": "rimraf dist && tsc",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/safe-global/safe-singleton-factory.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "Hardhat",
+    "Safe"
+  ],
+  "author": "richard@safe.global",
+  "bugs": {
+    "url": "https://github.com/safe-global/safe-singleton-factory/issues"
+  },
+  "devDependencies": {
+    "@matterlabs/hardhat-zksync-deploy": "^0.6.1",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.16",
+    "@matterlabs/zksync-contracts": "^0.6.1",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^20.14.15",
+    "@types/yargs": "^15.0.10",
+    "argv": "^0.0.2",
+    "axios": "^0.21.1",
+    "dotenv": "^8.0.0",
+    "ethers": "^5.7.0",
+    "hardhat": "^2.12.0",
+    "solc": "0.5.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "yargs": "^17.3.1",
+    "zksync-web3": "^0.14.3"
+  }
+}
